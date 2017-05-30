@@ -73,7 +73,7 @@ func (m *MyMap) Has(key string) bool {
 }
 
 func (m *MyMap) GetPairs() []Pair {
-	data := make([]Pair, 30)
+	data := make([]Pair, 0, 30)
 	for _, submap := range m.subMaps {
 		submap.RLock()
 		for key, value := range submap.Entry {
